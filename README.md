@@ -19,10 +19,14 @@ import spacetime from "spacetime";
 import { spacetimeToDiscord } from "spacetime-to-discord";
 
 const s = spacetime.now();
-const str = spacetimeToDiscord(s, { style: "time" });
+const str = spacetimeToDiscord(s, "nice" }); // "<t:1690139640:f>"
 ```
 
+If you'd prefer a shorter function name `s2d` is available as an alias.
+
 ### Available styles
+
+The style parameter can be optionally set to use any of the following styles:
 
 - Date
   - `"date"` / `"d"`: 23/07/2023
@@ -35,3 +39,5 @@ const str = spacetimeToDiscord(s, { style: "time" });
   - `"nice-full"` / `"F"`: Sunday, 23 July 2023 21:14
 - Relative
   - `"rel"` / `"R"`: 5 minutes ago
+
+If omitted the `nice-full` style is used.

@@ -35,6 +35,9 @@ devDependencies:
   simple-git-hooks:
     specifier: ^2.9.0
     version: 2.9.0
+  spacetime:
+    specifier: ^7.4.4
+    version: 7.4.4
   typescript:
     specifier: 5.1.6
     version: 5.1.6
@@ -1178,6 +1181,10 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /spacetime@7.4.4:
+    resolution: {integrity: sha512-88oqexyzGTzMCOibaBTE+3HXmaT+mw3EZVMymNTn1Xkg/6bC+nA3ZvsfmFEwxzc0VfG9BYYaXevvLiDRP7RJ6A==}
     dev: true
 
   /strip-ansi@6.0.1:
