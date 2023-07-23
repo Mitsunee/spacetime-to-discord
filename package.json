@@ -1,10 +1,14 @@
 {
-  "name": "library-template",
+  "name": "spacetime-to-discord",
   "version": "0.0.0",
   "description": "",
-  "keywords": [],
-  "author": "YOUR_NAME_HERE",
-  "repository": "foxkit-js/library-template",
+  "keywords": [
+    "spacetime",
+    "discord",
+    "timestamp"
+  ],
+  "author": "Mitsunee",
+  "repository": "Mitsunee/spacetime-to-discord",
   "license": "MIT",
   "type": "module",
   "main": "src/index.ts",
