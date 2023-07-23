@@ -19,7 +19,7 @@ import spacetime from "spacetime";
 import { spacetimeToDiscord } from "spacetime-to-discord";
 
 const s = spacetime.now();
-const str = spacetimeToDiscord(s, "nice" }); // "<t:1690139640:f>"
+const str = spacetimeToDiscord(s, "nice"); // "<t:1690139640:f>"
 ```
 
 If you'd prefer a shorter function name `s2d` is available as an alias.
