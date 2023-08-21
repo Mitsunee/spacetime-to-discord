@@ -1,7 +1,7 @@
 import type { Spacetime } from "spacetime";
 
 // prettier-ignore
-type Style =
+export type Style =
   | "date"      | "d"  // 23/07/2023
   | "date-nice" | "D"  // 23 July 2023
   | "time"      | "t"  // 21:14

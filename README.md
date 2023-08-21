@@ -24,7 +24,20 @@ const str = spacetimeToDiscord(s, "nice"); // "<t:1690139640:f>"
 
 If you'd prefer a shorter function name `s2d` is available as an alias.
 
-### Available styles
+## Plugin
+
+Alternatively you can register the plugin with a side-effect import at the top of your application:
+
+```ts
+import "spacetime-to-discord/plugin";
+
+const s = spacetime.now();
+const str = s.toDiscord("nice"); // "<t:1690139640:f>"
+```
+
+Note that in ES Modules you will need to add the `.js` extension to your import!
+
+## Available styles
 
 The style parameter can be optionally set to use any of the following styles:
 

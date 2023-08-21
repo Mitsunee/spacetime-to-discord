@@ -31,7 +31,8 @@
   },
   "files": [
     "*.d.ts",
-    "index.*"
+    "index.*",
+    "plugin.*"
   ],
   "clean-publish": {
     "packageManager": "pnpm",

@@ -10,7 +10,7 @@ const config = {
    * If you are doing multiple exports list all their files here like:
    * `["src/index.ts", "src/foobar.ts"]
    */
-  entryPoints: ["src/index.ts"],
+  entryPoints: ["src/index.ts", "src/plugin.ts"],
   /**
    * Directory in which your build is created.
    * Should match values in .prettierignore, esbuild.config.js and package.json
@@ -21,7 +21,7 @@ const config = {
    * (or multiple if you specified more entrypoints).
    * Disable this if you use multiple exports which share utils a lot.
    */
-  bundle: true,
+  bundle: false,
   /**
    * Builds modules for use with Node.js
    */
@@ -60,15 +60,21 @@ async function build() {
     ...config,
     format: "cjs",
     outExtension: { ".js": ".cjs" },
-    footer: {
-      /**
-       * This is required for interoperability with default exports
-       * @see https://github.com/evanw/esbuild/issues/1182#issuecomment-1011414271
-       * Feel free to remove this if you are not using default exports
-       * and this is causing problems
-       */
-      js: "if (module.exports.default) module.exports = module.exports.default"
-    }
+    bundle: true, // imports are set as external by the plugin below
+    plugins: [
+      {
+        name: "js-to-cjs",
+        setup(build) {
+          build.onResolve({ filter: /\.js$/ }, args => {
+            if (args.importer)
+              return {
+                path: args.path.replace(/\.js$/, ".cjs"),
+                external: true
+              };
+          });
+        }
+      }
+    ]
   });
 
   // Copy README file
